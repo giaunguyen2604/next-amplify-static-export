@@ -3,19 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-navy: 25 25 112;
+  --color-royal-blue: 65 105 225;
+  --color-sky-blue: 135 206 235;
+  --color-powder-blue: 176 224 230;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-powder-blue text-navy;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .bg-navy { background-color: rgb(var(--color-navy)); }
+  .bg-royal-blue { background-color: rgb(var(--color-royal-blue)); }
+  .bg-sky-blue { background-color: rgb(var(--color-sky-blue)); }
+  .bg-powder-blue { background-color: rgb(var(--color-powder-blue)); }
+  
+  .text-navy { color: rgb(var(--color-navy)); }
+  .text-royal-blue { color: rgb(var(--color-royal-blue)); }
+  .text-sky-blue { color: rgb(var(--color-sky-blue)); }
+  .text-powder-blue { color: rgb(var(--color-powder-blue)); }
 }
+
